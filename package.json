@@ -1,5 +1,5 @@
 {
-  "name": "json2ts",
+  "name": "mjson2ts",
   "version": "0.0.0",
   "description": "swagger转为ts",
   "main": "bin/index.js",
