@@ -118,8 +118,28 @@ export function interceptResponse<T>(res: Response) {
   return res.json() as Promise<T>
 }
 
-export default function request<T, U>(url: string, method: string = 'post', params: T) {
-  const [reqUrl, option] = interceptRequest(url, params)
-	option.method = method
-	return fetch(reqUrl, option).then<U>(interceptResponse)
+export default {
+  get<T>(url: string, params) {
+    const [reqUrl, option] = interceptRequest(url, params)
+    option.method = 'get'
+    return fetch(reqUrl, option).then<T>(interceptResponse)
+  },
+
+  post<T>(url: string, params) {
+    const [reqUrl, option] = interceptRequest(url, params)
+    option.method = 'post'
+    return fetch(reqUrl, option).then<T>(interceptResponse)
+  },
+
+  put<T>(url: string, params) {
+    const [reqUrl, option] = interceptRequest(url, params)
+    option.method = 'put'
+    return fetch(reqUrl, option).then<T>(interceptResponse)
+  },
+
+  delete<T>(url: string, params) {
+    const [reqUrl, option] = interceptRequest(url, params)
+    option.method = 'delete'
+    return fetch(reqUrl, option).then<T>(interceptResponse)
+  },
 }
