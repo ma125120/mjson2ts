@@ -1,6 +1,7 @@
 module.exports = {
   // url: 可以是远程swagger json，也可以是本地json
-  url: 'https://petstore.swagger.io/v2/swagger.json',
+  // url: 'https://petstore.swagger.io/v2/swagger.json',
+  url: 'http://api-alpha.heywoof.com/activity/v2/api-docs',
   // url: './test.json',
 
   // 输出文件的根目录
